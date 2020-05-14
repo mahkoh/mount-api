@@ -3,7 +3,11 @@ name = "mount-api"
 version = "0.1.0"
 authors = ["Julian Orth <ju.orth@gmail.com>"]
 edition = "2018"
-license = "MIT"
+description = "nix-like wrappper of the new linux mount api"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/mahkoh/mount-api"
+keywords = ["linux", "mount"]
+categories = ["filesystem", "os::unix-apis"]
 
 [dependencies]
 libc = "0.2"
