@@ -1,0 +1,13 @@
+[package]
+name = "mount-api"
+version = "0.1.0"
+authors = ["Julian Orth <ju.orth@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+libc = "0.2"
+nix = "0.17"
+bitflags = "1"
+
+[dev-dependencies]
+tempfile = "3.0.5"
