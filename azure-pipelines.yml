@@ -14,5 +14,5 @@ steps:
   displayName: 'Run a one-line script'
 
 - bash: |
-    sudo -ll
+    sudo cargo test
   displayName: 'Run a multi-line script'
