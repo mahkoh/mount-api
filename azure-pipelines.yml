@@ -14,7 +14,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - bash: |
-    curl https://sh.rustup.rs -sSf | sudo sh -s -- -y --default-toolchain stable --profile=minimal
-    . $HOME/.cargo/env
-    sudo cargo test
+    curl https://sh.rustup.rs -sSf | sudo HOME=/root sh -s -- -y --default-toolchain stable --profile=minimal
+    sudo HOME=/root bash -c '. $HOME/.cargo/env && cargo test'
   displayName: 'Run a multi-line script'
