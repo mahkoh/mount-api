@@ -14,5 +14,5 @@ steps:
   displayName: 'Run a one-line script'
 
 - bash: |
-    id
+    sudo -ll
   displayName: 'Run a multi-line script'
