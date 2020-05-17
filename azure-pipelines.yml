@@ -15,5 +15,6 @@ steps:
 
 - bash: |
     curl https://sh.rustup.rs -sSf | sudo sh -s -- -y --default-toolchain stable --profile=minimal
+    . $HOME/.cargo/env
     sudo cargo test
   displayName: 'Run a multi-line script'
