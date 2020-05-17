@@ -14,5 +14,6 @@ steps:
   displayName: 'Run a one-line script'
 
 - bash: |
+    sudo curl https://sh.rustup.rs -sSf | sh -s -- -y --default-toolchain stable --profile=minimal
     sudo cargo test
   displayName: 'Run a multi-line script'
