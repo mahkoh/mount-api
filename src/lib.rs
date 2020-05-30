@@ -103,7 +103,12 @@ mod sys {
     };
 
     pub unsafe fn open_tree(dfd: c_int, filename: *const c_char, flags: c_uint) -> c_int {
-        syscall(SYS_open_tree, dfd, filename, flags) as c_int
+        syscall(
+            SYS_open_tree,
+            dfd as usize,
+            filename as usize,
+            flags as usize,
+        ) as c_int
     }
 
     pub unsafe fn move_mount(
@@ -115,16 +120,16 @@ mod sys {
     ) -> c_int {
         syscall(
             SYS_move_mount,
-            from_dfd,
-            from_pathname,
-            to_dfd,
-            to_pathname,
-            flags,
+            from_dfd as usize,
+            from_pathname as usize,
+            to_dfd as usize,
+            to_pathname as usize,
+            flags as usize,
         ) as c_int
     }
 
     pub unsafe fn fsopen(fs_name: *const c_char, flags: c_uint) -> c_int {
-        syscall(SYS_fsopen, fs_name, flags) as c_int
+        syscall(SYS_fsopen, fs_name as usize, flags as usize) as c_int
     }
 
     pub unsafe fn fsconfig(
@@ -134,15 +139,27 @@ mod sys {
         value: *const c_void,
         aux: c_int,
     ) -> c_int {
-        syscall(SYS_fsconfig, fd, cmd, key, value, aux) as c_int
+        syscall(
+            SYS_fsconfig,
+            fd as usize,
+            cmd as usize,
+            key as usize,
+            value as usize,
+            aux as usize,
+        ) as c_int
     }
 
     pub unsafe fn fsmount(fs_fd: c_int, flags: c_uint, attr_flags: c_uint) -> c_int {
-        syscall(SYS_fsmount, fs_fd, flags, attr_flags) as c_int
+        syscall(
+            SYS_fsmount,
+            fs_fd as usize,
+            flags as usize,
+            attr_flags as usize,
+        ) as c_int
     }
 
     pub unsafe fn fspick(dfd: c_int, path: *const c_char, flags: c_uint) -> c_int {
-        syscall(SYS_fspick, dfd, path, flags) as c_int
+        syscall(SYS_fspick, dfd as usize, path as usize, flags as usize) as c_int
     }
 }
 
